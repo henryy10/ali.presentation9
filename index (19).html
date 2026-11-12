@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Dream Job · Grade 5D</title>
+<style>
+:root{color-scheme:light;--ink:#14213d;--blue:#2359d9;--sky:#dbeafe;--yellow:#fbbf24;--muted:#465777;--scale:1;font-family:"Nunito","Aptos","Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:#edf4ff;color:var(--ink)}button{font:inherit;cursor:pointer;touch-action:manipulation}button:focus-visible{outline:4px solid #a64e03;outline-offset:3px}button:disabled{cursor:default;opacity:.52}
+#viewport{position:fixed;inset:0;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 80% 10%,#e0edff,transparent 60%),#f3f7ff}
+#stage{position:absolute;width:1280px;height:720px;transform:scale(var(--scale));display:grid;grid-template-rows:66px minmax(0,1fr) 76px;background:radial-gradient(ellipse at 95% 0,#e0edff,transparent 55%),#f7faff;overflow:hidden}
+header,footer{display:flex;align-items:center;justify-content:space-between;padding:0 48px;gap:12px}header{border-bottom:1px solid #d8e4f5}footer{border-top:1px solid #d8e4f5;background:#ffffffa8}header .brand{font-weight:900;font-size:21px;letter-spacing:-.03em}.dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--yellow);margin-right:10px}.phase{font-weight:800;font-size:16px;color:#38517b}.tools,.nav,.actions,.chips{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.bar{flex:1;height:8px;max-width:680px;border-radius:99px;background:#dbe6f8;overflow:hidden}.bar span{display:block;height:100%;background:var(--blue);transition:width .45s;border-radius:inherit}#page{white-space:nowrap;font-weight:800;font-variant-numeric:tabular-nums}.btn{border:1px solid transparent;border-radius:13px;background:#e5efff;color:#183b83;font-weight:800;min-height:46px;padding:9px 17px;transition:background .2s,transform .2s}.btn:hover:not(:disabled){background:#d4e4fd;transform:translateY(-2px)}.btn:active:not(:disabled){transform:scale(.98)}.primary,.primary:hover:not(:disabled){background:#2359d9;color:#fff}.primary:hover:not(:disabled){background:#1848bc}.white{background:#fff;border-color:#d6e3f7}.amber,.amber:hover:not(:disabled){background:#ffe092;color:#3f2b04}.selected{background:#d6e6ff;border-color:#2359d9}.actions .btn,.chips .btn{font-size:21px;min-height:52px}
+#screen{min-height:0;padding:32px 64px;display:flex;flex-direction:column;justify-content:center;gap:18px}#screen.enter{animation:enter .47s both}@keyframes enter{from{opacity:0;transform:translateY(11px) scale(.994)}to{opacity:1;transform:none}}.appear{animation:enter .39s both;animation-delay:var(--delay,0ms)}
+h1,h2,p{margin:0}h1,h2{letter-spacing:-.05em;line-height:1.01}h2{font-size:57px}.lead{font-size:27px;color:var(--muted);font-weight:600}.hero{display:grid;grid-template-columns:1fr 1.04fr;gap:35px;align-items:center}.hero h1{font-size:94px;font-weight:950;text-transform:uppercase}.hero h1 span{color:var(--blue)}.hero p{font-size:26px;margin:16px 0 24px}.hero .btn{font-size:21px;padding:14px 23px}.hero-art{position:relative;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:14px}.hero-art::before{content:"";position:absolute;inset:10% -4%;background:radial-gradient(ellipse,#aacdff 8%,transparent 68%);animation:glow 8s ease-in-out infinite alternate}@keyframes glow{to{transform:translateY(-22px) scale(1.12);opacity:.5}}.hero-art svg{width:100%;height:178px;position:relative;filter:drop-shadow(0 8px 9px #14213d16)}
+.grid{display:grid;gap:16px}.two{grid-template-columns:repeat(2,minmax(0,1fr))}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{background:#fff;border:1px solid #d9e5f6;border-radius:22px;box-shadow:0 8px 22px #17395d0c;padding:17px}.portrait{text-align:center;display:grid;justify-items:center;gap:5px}.portrait svg{width:100%;height:155px}.vocab .portrait svg{height:205px}.portrait strong{font-size:31px}.translation{min-height:28px;font-size:20px;color:#415477}.topic-line{min-height:58px;font-size:33px;color:var(--blue);font-weight:900}
+.guess{grid-template-columns:1.35fr .85fr;align-items:stretch}.clues{display:grid;gap:10px;margin:0;padding:0;list-style:none;min-height:206px;align-content:start}.clues li{padding:10px 15px;border-radius:13px;background:#e7f0ff;font-size:28px;font-weight:750}.clues li b{display:inline-grid;place-items:center;width:35px;height:35px;border-radius:50%;background:#c9deff;font-size:20px;margin-right:10px}.mystery{display:grid;place-items:center;color:#345da6;font-size:105px;font-weight:900;background:radial-gradient(circle,#edf4ff,#dceaff);border:1px dashed #a1b9df;border-radius:22px}
+.line{font-size:31px;font-weight:750}.line b,.blue{color:var(--blue)}.formula{display:flex;flex-wrap:wrap;gap:10px}.token{background:#dbeafe;color:#174594;font-size:36px;font-weight:900;border-radius:14px;padding:10px 16px}.token:nth-child(2){background:#fff0bb;color:#624300}.examples{display:grid;gap:9px}.examples p{font-size:27px;font-weight:650}.builder .line{background:white;padding:12px 16px;border-radius:15px}.quiz .btn{width:100%;text-align:left;font-size:28px;padding:13px 18px}.quiz .btn b{display:inline-grid;place-items:center;border-radius:10px;background:#dbeafe;width:40px;height:40px;margin-right:13px;color:#183b83}.good{background:#d9f5e6!important;color:#0b5835!important;border-color:#64a98a!important}.wrong{background:#ffe5e0!important;color:#862c1f!important;border-color:#d59a90!important}.feedback{min-height:31px;font-size:23px;font-weight:800}
+.dialogue .card{display:flex;gap:11px;align-items:flex-start}.dialogue svg{flex:none;width:95px;height:77px}.dialogue p{font-size:23px;font-weight:750;min-height:31px}.dialogue small{font-size:16px;font-weight:800;color:#465777}.support{color:var(--muted);font-size:20px}.pair-timer{font-size:38px!important}.timer{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.clock{font-size:52px;font-weight:900;min-width:145px;font-variant-numeric:tabular-nums}.timer .status{font-weight:800;color:#365887}.poster{grid-template-columns:1fr 1fr}.poster ol{margin:0;padding-left:34px;font-size:29px;font-weight:850;display:grid;gap:14px}.poster .examples p{font-size:25px}.teams .portrait svg{height:105px}.teams .portrait strong{font-size:23px}.teams .card{padding:12px}.team-head{width:100%;min-height:42px}.score{display:grid;gap:5px;width:100%;text-align:left}.score label{display:flex;align-items:center;gap:7px;min-height:35px;font-size:17px;font-weight:650}.score input{accent-color:#2359d9;width:21px;height:21px;margin:0}.score-total{font-size:17px;font-weight:850}.reflect .btn{width:100%;min-height:173px;font-size:26px;display:grid;justify-items:center;gap:12px}.symbol{display:grid;place-items:center;width:64px;height:64px;border-radius:22px;background:#dbeafe;color:#1b4abb;font-size:39px;font-weight:900}.final{background:radial-gradient(ellipse at 70% 20%,#dceafe,transparent 70%)}.final h1{font-size:79px}.final .symbol{background:#ffe3a0;color:#774d04}
+dialog{width:min(480px,100%);max-height:100dvh;border:0;border-radius:20px;padding:22px;color:var(--ink);background:#fff;box-shadow:0 14px 50px #14213d45}dialog::backdrop{background:#14213d66}
+body.notes-docked #viewport{right:min(30vw,420px)}
+body.notes-docked #notesDialog{position:fixed;inset:0 0 0 auto;margin:0;width:min(30vw,420px);height:100dvh;max-height:none;border-radius:0;overflow:auto;box-shadow:-4px 0 18px #14213d12}.notes-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.notes-head h2{font-size:26px;letter-spacing:-.025em}.note-content h3{font-size:22px;margin:.5em 0}.note-content p{margin:.7em 0;line-height:1.45}.note-content{font-size:17px}#hint{position:fixed;bottom:8px;left:50%;transform:translateX(-50%);background:#14213d;color:white;border-radius:10px;padding:10px 14px;text-align:center;max-width:90vw}#hint:empty{display:none}
+@media (orientation:portrait) and (max-width:720px){
+#stage{inset:0;width:100%;height:100%;transform:none;grid-template-rows:auto minmax(0,1fr) auto}header,footer{padding:8px 11px;flex-wrap:wrap}header .brand{font-size:17px}header .phase{order:3;flex-basis:100%;font-size:13px}header .tools{margin-left:auto}header .btn,footer .btn{padding:5px 9px;min-height:40px;font-size:14px}footer .bar{order:4;flex-basis:100%;max-width:none;height:5px}#screen{overflow:auto;justify-content:safe center;padding:14px;gap:13px}h2{font-size:37px}.lead{font-size:19px}.hero{grid-template-columns:1fr;gap:8px}.hero h1,.final h1{font-size:clamp(37px,11vw,56px)}.hero p{font-size:20px;margin:10px 0}.hero-art{padding:0;gap:7px}.hero-art svg{height:100px}.portrait svg,.vocab .portrait svg{height:97px}.portrait strong{font-size:19px}.card{padding:8px;border-radius:13px}.grid{gap:7px}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.guess{grid-template-columns:1fr}.clues{min-height:115px}.clues li{padding:5px;font-size:19px}.mystery{display:none}.line,.examples p,.poster .examples p,.poster ol,.topic-line{font-size:20px}.token,.quiz .btn{font-size:22px}.actions .btn,.chips .btn{font-size:15px;min-height:43px;padding:6px 9px}.dialogue .card{flex-direction:column}.dialogue svg{width:63px;height:50px}.dialogue p{font-size:17px}.support,.translation{font-size:15px}.teams{grid-template-columns:1fr}.teams .portrait svg{display:none}.score label{font-size:14px}.reflect .btn{font-size:15px;min-height:125px;padding:5px}.symbol{width:42px;height:42px;font-size:24px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="viewport"><div id="stage">
+<header><div class="brand"><span class="dot"></span>My Dream Job</div><div class="phase" id="phase"></div><div class="tools"><button class="btn white" id="notes">Notes</button><button class="btn white" id="fullscreen" aria-label="Toggle fullscreen">⛶ Fullscreen</button></div></header>
+<main id="screen" tabindex="-1" aria-label="Lesson slide"></main>
+<footer><button class="btn white" id="home">⌂ Home</button><div class="bar" id="progress" role="progressbar" aria-label="Lesson progress" aria-valuemin="1" aria-valuemax="23"><span></span></div><span id="page"></span><div class="nav"><button class="btn white" id="prev" aria-label="Previous slide">← Back</button><button class="btn primary" id="next" aria-label="Next slide">Next →</button></div></footer>
+</div></div>
+<dialog id="notesDialog" aria-labelledby="notesHeading"><div class="notes-head"><h2 id="notesHeading">Teacher notes</h2><button class="btn" id="closeNotes">Close</button></div><div class="note-content" id="noteBody"></div><button class="btn primary" id="popNotes">Open in a separate window ↗</button></dialog>
+<div id="hint" role="status"></div>
+<script>
+'use strict';
+const jobs = [
+ ['Doctor','Дәрігер','Врач','#dcecff','#5a8ed6','#f1bd92','#422d36'],
+ ['Teacher','Мұғалім','Учитель','#eee6ff','#8055ad','#d79367','#35293a'],
+ ['Pilot','Ұшқыш','Пилот','#d8effc','#2d5189','#c88b64','#2c2336'],
+ ['Chef','Аспаз','Повар','#fff0cd','#e99341','#efb78d','#463144'],
+ ['Police officer','Полиция қызметкері','Полицейский','#dce9ff','#2b4c86','#ac6c53','#2d2737'],
+ ['Footballer','Футболшы','Футболист','#d7f4e9','#168670','#a86449','#282439'],
+ ['Student A','','','#e4ebff','#5c72cd','#e9ab7b','#3a2935'],
+ ['Student B','','','#fff0d4','#c57143','#ad7054','#322734']
+];
+const details = [
+ '<path d="M65 178v-24q0-15 13-15t13 15v9q0 13 13 13t13-14v-12" fill="none" stroke="#315783" stroke-width="4"/><circle cx="118" cy="146" r="6" fill="#73a8ef"/><path d="M135 143v16m-8-8h16" stroke="#c7516a" stroke-width="4"/>',
+ '<path d="M119 145l41-7 11 47-46 4z" fill="#684e9b"/><path d="M130 150l23-4m-21 12l18-4" stroke="#f3eaff" stroke-width="3" stroke-linecap="round"/><path d="M71 78h22m14 0h22m-36 0q7-6 14 0" stroke="#453550" stroke-width="3"/>',
+ '<path d="M63 60q2-22 37-23t38 23l-11 13H75z" fill="#243c66"/><path d="M66 61h68l-7 9H73z" fill="#f2bb56"/><path d="M132 140h19m-19 8h19m-19 8h19" stroke="#f2bb56" stroke-width="4"/><path d="M95 125l5 8 5-8 5 45-10 12-10-12z" fill="#233651"/>',
+ '<path d="M73 66l-2-17c-17-4-12-23 2-25 4-12 19-14 27-8 10-8 23-4 27 8 17 1 18 21 4 25l-3 17z" fill="#fff" stroke="#e7c88e" stroke-width="2"/><path d="M73 55h55" stroke="#ecd3a4" stroke-width="3"/><path d="M91 132l26 57m-8-55-25 55" stroke="#fff" stroke-width="4"/><circle cx="100" cy="148" r="2.7" fill="#803e30"/>',
+ '<path d="M61 58l16-15 23-5 24 5 16 15-12 13H72z" fill="#223a66"/><path d="M67 60h66l-7 8H74z" fill="#416494"/><path d="M100 45l7 4-2 8-5 4-5-4-2-8zm40 98l8 4-2 9-6 4-6-4-2-9z" fill="#ffd36e"/>',
+ '<path d="M65 141l10-7v56H65zm60-7l10 7v49h-10z" fill="#85dfcb"/><circle cx="151" cy="160" r="22" fill="#fff" stroke="#26344c" stroke-width="2"/><path d="M151 150l8 6-3 10h-10l-3-10zm-18 7 7 2m25-3 6-2m-21-15 1 10m-11 29 6-12m16 13-6-13" fill="#26344c" stroke="#26344c" stroke-width="2"/>',
+ '<path d="M49 145l10-7 9 48H56zm102 0-10-7-9 48h12z" fill="#f7bd5a"/>',
+ '<path d="M79 131l21 17 21-17m-21 17v42" fill="none" stroke="#ffe0a0" stroke-width="4"/>'
+];
+function art(i){
+ const [name,,,bg,shirt,skin,hair]=jobs[i];
+ const jacket=i===0||i===3?'#fbfdff':shirt;
+ return `<svg viewBox="0 0 200 182" role="img" aria-label="${name}" xmlns="http://www.w3.org/2000/svg">
+ <rect width="200" height="182" rx="24" fill="${bg}"/><circle cx="100" cy="92" r="67" fill="#fff" opacity=".48"/>
+ <path d="M23 52h15m-7-7v14m137 64h14m-7-7v14" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+ ${i===1||i===7?`<path d="M63 74q0-33 38-34 35 0 36 33l7 60H56z" fill="${hair}"/>`:''}
+ <path d="M35 182l7-27q4-16 23-22l25-9h20l25 9q19 6 23 22l7 27z" fill="${jacket}"/>
+ <path d="M83 106h34v21q-17 20-34 0z" fill="${skin}"/>
+ <path d="M68 68q1-24 32-24t32 24v22q-2 28-32 30-30-2-32-30z" fill="${skin}"/>
+ <circle cx="69" cy="85" r="7" fill="${skin}"/><circle cx="131" cy="85" r="7" fill="${skin}"/>
+ <path d="M66 79q-4-10 0-20 7-19 34-20 29-1 35 22l-2 17q-9-2-11-18-16 11-43 4-1 11-13 15z" fill="${hair}"/>
+ <circle cx="85" cy="82" r="2.6" fill="#26344c"/><circle cx="115" cy="82" r="2.6" fill="#26344c"/>
+ <path d="M99 87l-2 8h5m-11 7q9 7 18 0" fill="none" stroke="#694438" stroke-width="2" stroke-linecap="round"/>
+ ${details[i]}</svg>`;
+}
+const occupations=[0,1,2,3,4,5];
+const guesses=[
+ [0,['I work in a hospital.','I help sick people.','I wear a white coat.']],
+ [1,['I work in a school.','I teach children.','I check homework.']],
+ [3,['I work in a kitchen.','I cook food.','I wear a special hat.']]
+];
+const quiz=[
+ ['Who works in a hospital?',['Teacher','Doctor','Pilot'],1],
+ ['Who cooks food?',['Chef','Pilot','Footballer'],0],
+ ['Who flies planes?',['Doctor','Teacher','Pilot'],2],
+ ['Complete the sentence.',['be','to be','am'],1]
+];
+const reasons=['want to help people','like travelling','like cooking','want to fly planes','like teaching','like playing football'];
+const groups=[['Doctors',0],['Pilots',2],['Teachers',1]];
+const criteria=['Correct vocabulary','Complete sentences','Team participation'];
+const phases=[
+ ['Greeting & warm-up',0,2],['Guess the job',3,5],['Vocabulary',6,8],['Sentence building',9,11],
+ ['Quiz time',12,15],['Pair speaking',16,16],['Poster challenge',17,19],['Reflection',20,22]
+];
+const notes=[
+ [0.5,'Welcome to our English lesson!','Good morning!','Click Start Lesson when everyone is ready.'],
+ [1.5,'Good morning, everyone! How are you today? Are you ready for our lesson?','I’m happy. / I’m good. / I’m tired. / Yes!','Model one answer and let pupils point to a face or answer aloud.'],
+ [2,'What can you see? What jobs can you name?','A doctor, a pilot, a chef.','Accept single words. Reveal the topic after a few guesses.'],
+ [1.75,'Who am I? Listen to the first clue.','A doctor.','Reveal clues one at a time. Accept several guesses, then reveal the picture.'],
+ [1.5,'Where do I work? Who am I?','A teacher.','Let a pupil read a clue aloud before revealing the answer.'],
+ [1.75,'Who am I? What do I wear?','A chef.','Show the picture after students guess. Point to the hat and repeat chef together.'],
+ [2,'Look at the picture. Listen and repeat. What job is this? Excellent!','Doctor. Teacher.','Model each word. Switch to Remember, then Check. Use translations only if pupils need help.'],
+ [2,'Look at the picture. Listen and repeat. What job is this? Excellent!','Pilot. Chef.','Repeat pilot and chef as a class, then ask individuals. Model chef with the /ʃ/ sound.'],
+ [2,'Look at the picture. Listen and repeat. What job is this? Excellent!','Police officer. Footballer.','Say police officer slowly, then naturally. Hide names and ask pupils to recall both jobs.'],
+ [2,'Look at the board. Listen carefully. I want to be a doctor. Now repeat after me. Who wants to be a doctor?','I want to be a doctor.','All six target jobs take a. Use an before a vowel sound, as in an artist.'],
+ [2,'Why? Because I want to help people. Can you say the whole sentence?','I want to be a doctor because I want to help people.','Reveal reasons and examples gradually. If helpful, say because means потому что.'],
+ [2,'Choose a job. Choose a reason. Say your sentence.','I want to be a pilot because I want to fly planes.','Let pupils choose a combination and practise it aloud. A pupil can tap the board.'],
+ [1.25,'Who works in a hospital? Choose A, B or C.','B. Doctor.','Wait for pupils to answer before tapping. Use Retry after an incorrect choice.'],
+ [1.25,'Who cooks food?','A. Chef.','Ask for the full reply if appropriate: A chef cooks food.'],
+ [1.25,'Who flies planes?','C. Pilot.','Invite a pupil to say: A pilot flies planes.'],
+ [1.25,'Complete the sentence. Read the whole sentence to me.','B. to be. I want to be a teacher.','Ask pupils to say the completed sentence together.'],
+ [5,'Ask your partner. Then change roles.','What do you want to be? I want to be a pilot. Why? Because I want to fly planes.','Use about two minutes to model the dialogue. Start the two-minute timer for both partners, then invite a pair to demonstrate.'],
+ [1,'Work together and create a poster about your profession.','We are Doctors / Pilots / Teachers.','Form three groups. Hand out A3 paper and markers. Give pupils roles for drawing, writing and speaking.'],
+ [5,'Draw your job. Write three sentences. Get ready to present.','Doctors: This is a doctor. A doctor works in a hospital. A doctor helps people.<br>Pilots: This is a pilot. A pilot flies planes. A pilot works on a plane.<br>Teachers: This is a teacher. A teacher works in a school. A teacher teaches children.','Start the five-minute timer once materials are ready. Walk around and help with spelling.'],
+ [3,'Show your poster. Tell us about your job.','This is a teacher. A teacher works in a school. A teacher teaches children.','Allow roughly one minute per group. Tap its card to mark completion and use the three independent criteria.'],
+ [2,'Finish one of these sentences.','Today I learned the word pilot. / My dream job is to be a chef.','Allow thinking time. Accept a short, clear answer.'],
+ [2,'Which sentence is true for you today?','I can name different jobs. / I need more practice.','Pupils can point or show one, two or three fingers. They can choose more than one statement.'],
+ [1,'Great job, everyone! Keep dreaming. Keep learning.','Thank you! Goodbye!','Praise a specific effort you saw during the lesson.']
+];
+const byId=id=>document.getElementById(id);
+const screen=byId('screen');
+const state={
+ slide:0,topic:false,mood:null,grammar:0,because:0,job:null,reason:null,pair:0,reflection:null,
+ guesses:guesses.map(()=>({count:0,answer:false})),
+ vocab:Array.from({length:3},()=>({mode:'Learn',translation:false})),
+ quiz:quiz.map(()=>null),
+ teams:groups.map(()=>({done:false,points:[false,false,false]})),
+ timers:{pair:{total:120,left:120,until:null},poster:{total:300,left:300,until:null}}
+};
+let notesWindow=null;
+let hintTimeout;
+const lower=i=>jobs[i][0].toLowerCase();
+const btn=(label,action,opts={})=>`<button type="button" class="btn ${opts.className||''}" data-action="${action}" ${opts.disabled?'disabled':''} ${opts.pressed===undefined?'':`aria-pressed="${opts.pressed}"`}>${label}</button>`;
+const actions=(...items)=>`<div class="actions">${items.join('')}</div>`;
+const chips=(...items)=>`<div class="chips">${items.join('')}</div>`;
+const heading=(title,sub='')=>`<h2>${title}</h2>${sub?`<p class="lead">${sub}</p>`:''}`;
+const portrait=(i,label='',extra='')=>`<div class="card portrait">${art(i)}${label?`<strong>${label}</strong>`:''}${extra}</div>`;
+const portraitGrid=(indices,labels=false)=>`<div class="grid three">${indices.map(i=>portrait(i,labels?jobs[i][0]:'')).join('')}</div>`;
+const fade=(html,delay=0)=>`<div class="appear" style="--delay:${delay}ms">${html}</div>`;
+const examples=(lines)=>`<div class="examples">${lines.map(l=>`<p>${l}</p>`).join('')}</div>`;
+const finished=t=>t.left===0&&t.until===null;
+function face(i){
+ const mouth=['M18 31q8 10 16 0','M19 33h14','M19 35q7-7 14 0'][i];
+ return `<svg width="92" height="92" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="${['#ffe5a1','#d8eaff','#e9dfff'][i]}"/><circle cx="18" cy="21" r="2" fill="#14213d"/><circle cx="34" cy="21" r="2" fill="#14213d"/><path d="${mouth}" stroke="#14213d" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>`;
+}
+function clockMarkup(kind){
+ const t=state.timers[kind];
+ return `<div class="timer"><span class="clock" id="clock" role="timer" aria-label="${kind==='pair'?'Pair work':'Poster work'} time left"></span>
+ ${kind==='poster'?btn('Start','timer-start:poster',{className:'primary',disabled:t.until!==null||finished(t)}):''}
+ ${btn('Pause','timer-pause:'+kind,{disabled:t.until===null})}
+ ${btn('Reset','timer-reset:'+kind,{disabled:t.until===null&&t.left===t.total})}
+ <span class="status" id="timerStatus" role="status">${finished(t)?"Time’s up.":''}</span></div>`;
+}
+function guessSlide(i){
+ const [job,clues]=guesses[i];
+ const g=state.guesses[i];
+ return heading('Who am I?',`Job ${i+1} of 3 · Listen and guess.`)+
+ `<div class="grid guess"><ol class="clues" aria-live="polite">${clues.slice(0,g.count).map((clue,j)=>`<li class="${j===g.count-1&&!g.answer?'appear':''}"><b>${j+1}</b>${clue}</li>`).join('')}</ol>
+ ${g.answer?fade(portrait(job,jobs[job][0])):'<div class="mystery" aria-hidden="true">?</div>'}</div>`+
+ actions(btn('Next clue','clue',{className:'primary',disabled:g.count===3||g.answer}),btn('Reveal answer','answer',{disabled:g.answer}),btn(i<2?'Next question →':'Learn the jobs →','forward',{disabled:!g.answer}));
+}
+function vocabSlide(i){
+ const v=state.vocab[i];
+ const reveal=v.mode!=='Remember';
+ return heading('Learn the jobs',v.mode==='Remember'?'What job is this?':v.mode==='Check'?'Check your answers.':'Look, listen and repeat.')+
+ `<div class="grid two vocab">${[i*2,i*2+1].map((j,k)=>fade(portrait(j,reveal?jobs[j][0]:'?',`<p class="translation">${v.translation&&reveal?`${jobs[j][1]} · ${jobs[j][2]}`:''}</p>`),k*65)).join('')}</div>`+
+ actions(...['Learn','Remember','Check'].map(mode=>btn(mode,'mode:'+mode,{pressed:v.mode===mode,className:v.mode===mode?'primary':''})),
+ btn(v.translation?'Hide translations':'Show translations','translation',{pressed:v.translation,disabled:!reveal}));
+}
+function quizSlide(i){
+ const [question,options,correct]=quiz[i];
+ const choice=state.quiz[i];
+ const right=choice===correct;
+ return heading(question,`Question ${i+1} of 4`)+(i===3?'<p class="line">I want ___ a teacher.</p>':'')+
+ `<div class="grid quiz">${options.map((option,j)=>btn(`<b>${'ABC'[j]}</b>${option}`,'pick:'+j,{className:choice===j?(right?'good appear':'wrong appear'):'white',disabled:choice!==null&&choice!==j,pressed:choice===j})).join('')}</div>`+
+ `<p class="feedback" role="status">${choice===null?'':right?'✓ Correct!':'Try again.'}</p>`+
+ actions(btn('Retry','retry',{disabled:choice===null||right}),btn(i<3?'Next question →':'Pair speaking →','forward',{className:'primary',disabled:!right}));
+}
+function teamScore(){
+ return `<div class="grid three teams">${groups.map(([name,i],j)=>{
+ const t=state.teams[j];
+ const score=t.points.filter(Boolean).length;
+ return portrait(i,'',`<strong>Team ${j+1} · ${name}</strong>
+ ${btn(t.done?'✓ Presented':'Mark presented','team:'+j,{className:t.done?'team-head good':'team-head',pressed:t.done})}
+ <div class="score">${criteria.map((c,k)=>`<label><input type="checkbox" data-score="${j}:${k}" ${t.points[k]?'checked':''}>${c} · 1 point</label>`).join('')}</div>
+ <span class="score-total" data-total="${j}" aria-live="polite">${score} / 3 points</span>`);
+ }).join('')}</div>`;
+}
+const slideMarkup=[
+ ()=>`<div class="hero"><div><h1>My Dream<br><span>Job</span></h1><p>English Lesson — Grade 5D</p>${btn('Start lesson →','forward',{className:'primary'})}</div><div class="hero-art">${[0,2,1,3].map((i,j)=>fade(art(i),j*70)).join('')}</div></div>`,
+ ()=>heading('Good morning, everyone!','How are you today? Are you ready for our lesson?')+
+ `<div class="grid three reflect">${['Happy','Good','Tired'].map((label,i)=>btn(face(i)+label,'mood:'+i,{className:state.mood===i?'selected':'white',pressed:state.mood===i})).join('')}</div>`,
+ ()=>heading('What can you see?')+portraitGrid([0,2,3])+
+ `<div class="topic-line" aria-live="polite">${state.topic?fade('Today we are talking about DREAM JOBS!'):''}</div>`+actions(btn('Reveal the topic','topic',{className:'primary',disabled:state.topic})),
+ ...guesses.map((_,i)=>()=>guessSlide(i)),
+ ...Array.from({length:3},(_,i)=>()=>vocabSlide(i)),
+ ()=>heading('I want to be…')+'<p class="line">I want to be a doctor.</p><p class="lead">Мен дәрігер болғым келеді.</p>'+
+ (state.grammar>=1?fade('<div class="formula"><span class="token">I want to be</span><span class="token">a / an</span><span class="token">job</span></div>'):'')+
+ (state.grammar>=2?fade(examples(['I want to be a doctor.','I want to be a pilot.','I want to be a teacher.'])):'')+
+ actions(btn(state.grammar===0?'Show the pattern':'Show examples','grammar',{className:'primary',disabled:state.grammar===2})),
+ ()=>heading('Why?')+
+ (state.because>=1?fade('<p class="line"><b>Because</b> I want to help people.</p>'):'')+
+ (state.because>=2?fade(examples(['I want to be a doctor <b class="blue">because</b> I want to help people.','I want to be a pilot <b class="blue">because</b> I like travelling.','I want to be a chef <b class="blue">because</b> I like cooking.'])):'')+
+ actions(btn(state.because===0?'Reveal the reason':'Show examples','because',{className:'primary',disabled:state.because===2})),
+ ()=>heading('Build your sentence','Choose a job and a reason. Say the whole sentence.')+
+ `<div class="grid builder"><p class="line" aria-live="polite">I want to be a <b>${state.job===null?'______':lower(state.job)}</b>.</p>
+ ${chips(...occupations.map(i=>btn(jobs[i][0],'job:'+i,{className:state.job===i?'selected':'white',pressed:state.job===i})))}
+ <p class="line" aria-live="polite">Because I <b>${state.reason===null?'______':reasons[state.reason]}</b>.</p>
+ ${chips(...reasons.map((reason,i)=>btn(reason,'reason:'+i,{className:state.reason===i?'selected':'white',pressed:state.reason===i})))}</div>`,
+ ...quiz.map((_,i)=>()=>quizSlide(i)),
+ ()=>{
+ const lines=['What do you want to be?','I want to be a pilot.','Why?','Because I want to fly planes.'];
+ const t=state.timers.pair;
+ return heading('My Dream Job Interview','Ask your partner. Then change roles.')+
+ `<div class="grid two dialogue">${[0,1].map(i=>`<div class="card">${art(6+i)}<div><small>${jobs[6+i][0]}</small>${[i,i+2].map(j=>`<p aria-live="polite" class="${j===state.pair-1?'appear':''}">${j<state.pair?lines[j]:''}</p>`).join('')}</div></div>`).join('')}</div>
+ <p class="support">Try: a doctor / help people · a chef / cook food · a teacher / teach children.</p>`+
+ actions(btn('Reveal next line','pair-line',{disabled:state.pair===4}),btn(t.left===t.total?'Start pair work':'Resume pair work','timer-start:pair',{className:'primary',disabled:t.until!==null||finished(t)}))+
+ clockMarkup('pair');
+ },
+ ()=>heading('Team Challenge','Work together and create a poster about your profession.')+
+ `<div class="grid three">${groups.map(([name,i],j)=>portrait(i,`Team ${j+1} · ${name}`)).join('')}</div>`,
+ ()=>heading('Create your poster','Use A3 paper and coloured markers.')+
+ `<div class="grid poster"><div class="card"><ol><li>Draw your job.</li><li>Write three sentences.</li><li>Present your poster.</li></ol></div>
+ <div class="card"><p class="lead">Example</p>${examples(['This is a doctor.','A doctor works in a hospital.','A doctor helps people.'])}</div></div>`+
+ clockMarkup('poster'),
+ ()=>heading('Show your dream job!','Present your poster to the class.')+teamScore(),
+ ()=>heading('What have you learned?','Finish one or more sentences.')+
+ `<div class="grid">${['Today I learned…','My dream job is…','I want to be a… because…'].map(line=>`<div class="card line">${line}</div>`).join('')}</div>`,
+ ()=>heading('How did you do today?','Choose a sentence that is true for you.')+
+ `<div class="grid three reflect">${['I can talk about my dream job.','I can name different jobs.','I need more practice.'].map((label,i)=>btn(`<span class="symbol" aria-hidden="true">${['“','✓','↗'][i]}</span>${label}`,'reflection:'+i,{className:state.reflection===i?'selected':'white',pressed:state.reflection===i})).join('')}</div>`,
+ ()=>`<div class="hero final"><div><span class="symbol appear" aria-hidden="true">✦</span><h1>Great job,<br><span>everyone!</span></h1><p>Keep dreaming. Keep learning.</p></div><div class="hero-art">${[4,3,5,2].map((i,j)=>fade(art(i),j*70)).join('')}</div></div>`
+];
+function timerForSlide(){return state.slide===16?'pair':state.slide===18?'poster':null;}
+function updateClocks(){
+ let repaint=false;
+ for(const [kind,t] of Object.entries(state.timers)){
+  if(t.until===null) continue;
+  t.left=Math.max(0,Math.ceil((t.until-Date.now())/1000));
+  if(t.left===0){
+   t.until=null;
+   repaint ||= kind===timerForSlide();
+  }
+ }
+ if(repaint){render();return;}
+ const kind=timerForSlide();
+ if(kind){
+  const left=state.timers[kind].left;
+  const time=`${Math.floor(left/60)}:${String(left%60).padStart(2,'0')}`;
+  const clock=byId('clock');
+  if(clock&&clock.textContent!==time) clock.textContent=time;
+ }
+}
+function noteMarkup(){
+ const [minutes,say,expected,tip]=notes[state.slide];
+ const seconds=Math.round(minutes*60);
+ const time=seconds<60?`${seconds} sec`:`${Math.floor(seconds/60)} min${seconds%60?` ${seconds%60} sec`:''}`;
+ return `<h3>Slide ${state.slide+1} · ${time}</h3><p><strong>Say</strong><br>${say}</p><p><strong>Expected answers</strong><br>${expected}</p><p><strong>Teaching instructions</strong><br>${tip}</p>`;
+}
+function updateNotes(){
+ const html=noteMarkup();
+ byId('noteBody').innerHTML=html;
+ if(notesWindow&&!notesWindow.closed){
+  try{notesWindow.document.getElementById('live').innerHTML=html;}
+  catch{notesWindow=null;}
+ }
+}
+function render(enter=false){
+ const focus=document.activeElement?.dataset?.action;
+ const mobileScroll=screen.scrollTop;
+ screen.innerHTML=slideMarkup[state.slide]();
+ if(enter){
+  screen.scrollTop=0;
+  screen.classList.remove('enter');
+  void screen.offsetWidth;
+  screen.classList.add('enter');
+  if(focus) screen.focus({preventScroll:true});
+ }else{
+  screen.scrollTop=mobileScroll;
+  if(focus){
+   const replacement=[...screen.querySelectorAll('[data-action]')].find(el=>el.dataset.action===focus&&!el.disabled);
+   if(replacement) replacement.focus({preventScroll:true});
+  }
+ }
+ const [title]=phases.find(([,from,to])=>state.slide>=from&&state.slide<=to);
+ byId('phase').textContent=title;
+ byId('page').textContent=`${state.slide+1} / ${slideMarkup.length}`;
+ byId('progress').setAttribute('aria-valuenow',state.slide+1);
+ byId('progress').firstElementChild.style.width=`${(state.slide+1)/slideMarkup.length*100}%`;
+ byId('prev').disabled=state.slide===0;
+ byId('next').disabled=state.slide===slideMarkup.length-1;
+ updateNotes();
+ updateClocks();
+}
+function go(slide){
+ if(slide>=0&&slide<slideMarkup.length&&state.slide!==slide){
+  state.slide=slide;
+  render(true);
+ }
+}
+function handleAction(action){
+ const [key,value]=action.split(':');
+ const i=Number(value);
+ const guess=state.guesses[state.slide-3];
+ const vocab=state.vocab[state.slide-6];
+ const qi=state.slide-12;
+ switch(key){
+  case 'forward':go(state.slide+1);return;
+  case 'topic':state.topic=true;break;
+  case 'mood':state.mood=i;break;
+  case 'clue':if(!guess.answer&&guess.count<3) guess.count++;break;
+  case 'answer':guess.answer=true;break;
+  case 'mode':vocab.mode=value;break;
+  case 'translation':vocab.translation=!vocab.translation;break;
+  case 'grammar':state.grammar=Math.min(2,state.grammar+1);break;
+  case 'because':state.because=Math.min(2,state.because+1);break;
+  case 'job':state.job=i;break;
+  case 'reason':state.reason=i;break;
+  case 'pick':if(state.quiz[qi]===null) state.quiz[qi]=i;break;
+  case 'retry':state.quiz[qi]=null;break;
+  case 'pair-line':state.pair=Math.min(4,state.pair+1);break;
+  case 'timer-start':{
+   const t=state.timers[value];
+   if(t.until===null&&t.left>0) t.until=Date.now()+t.left*1000;
+   break;
+  }
+  case 'timer-pause':{
+   const t=state.timers[value];
+   if(t.until!==null){
+    t.left=Math.max(0,Math.ceil((t.until-Date.now())/1000));
+    t.until=null;
+   }
+   break;
+  }
+  case 'timer-reset':{
+   const t=state.timers[value];
+   t.left=t.total;
+   t.until=null;
+   break;
+  }
+  case 'team':state.teams[i].done=!state.teams[i].done;break;
+  case 'reflection':state.reflection=i;break;
+ }
+ render();
+}
+screen.addEventListener('click',e=>{
+ const control=e.target.closest('[data-action]');
+ if(control) handleAction(control.dataset.action);
+});
+screen.addEventListener('change',e=>{
+ if(!e.target.dataset.score) return;
+ const [team,criterion]=e.target.dataset.score.split(':').map(Number);
+ state.teams[team].points[criterion]=e.target.checked;
+ screen.querySelector(`[data-total="${team}"]`).textContent=`${state.teams[team].points.filter(Boolean).length} / 3 points`;
+});
+byId('home').onclick=()=>go(0);
+byId('prev').onclick=()=>go(state.slide-1);
+byId('next').onclick=()=>go(state.slide+1);
+function notifyUser(message){
+ byId('hint').textContent=message;
+ clearTimeout(hintTimeout);
+ hintTimeout=setTimeout(()=>{byId('hint').textContent='';},4200);
+}
+async function fullscreen(){
+ try{
+  if(document.fullscreenElement) await document.exitFullscreen();
+  else if(document.documentElement.requestFullscreen) await document.documentElement.requestFullscreen();
+  else throw Error('Fullscreen unavailable');
+ }catch{
+  notifyUser('Fullscreen is unavailable here. Try your browser’s fullscreen mode or rotate your phone.');
+ }
+}
+byId('fullscreen').onclick=fullscreen;
+document.addEventListener('fullscreenchange',()=>{
+ byId('fullscreen').textContent=document.fullscreenElement?'⛶ Exit fullscreen':'⛶ Fullscreen';
+});
+const dialog=byId('notesDialog');
+byId('notes').onclick=()=>{
+ if(notesWindow&&!notesWindow.closed){notesWindow.focus();return;}
+ if(dialog.open){dialog.close();return;}
+ if(innerWidth>=900){document.body.classList.add('notes-docked');dialog.show();sizeStage();}
+ else dialog.showModal();
+};
+byId('closeNotes').onclick=()=>dialog.close();
+dialog.addEventListener('close',()=>{document.body.classList.remove('notes-docked');sizeStage();});
+byId('popNotes').onclick=()=>{
+ try{
+  notesWindow=window.open('','DreamJobTeacherNotes','popup,width=520,height=600');
+  if(!notesWindow) throw Error('Window blocked');
+  notesWindow.document.open();
+  notesWindow.document.write(`<!doctype html><html lang="en"><meta charset="utf-8"><title>My Dream Job · Teacher notes</title>
+  <style>body{font:18px/1.55 system-ui;color:#14213d;background:#f3f7ff;padding:18px}h1{line-height:1.1}main{border:1px solid #dbe6f8;background:#fff;border-radius:16px;padding:16px}h3{margin:0}</style>
+  <h1>Teacher notes</h1><main id="live"></main></html>`);
+  notesWindow.document.close();
+  updateNotes();
+  dialog.close();
+  notesWindow.focus();
+ }catch{
+  notesWindow=null;
+  byId('popNotes').textContent='Separate window blocked. Notes are available here.';
+ }
+};
+function spaceAction(){
+ const s=state.slide;
+ if(s===2&&!state.topic) return 'topic';
+ if(s>=3&&s<=5){
+  const g=state.guesses[s-3];
+  if(!g.answer&&g.count<3) return 'clue';
+  if(!g.answer) return 'answer';
+ }
+ if(s===9&&state.grammar<2) return 'grammar';
+ if(s===10&&state.because<2) return 'because';
+ if(s===16&&state.pair<4) return 'pair-line';
+ return null;
+}
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape'&&dialog.open){e.preventDefault();dialog.close();return;}
+ if(e.target.closest('#notesDialog')||e.altKey||e.ctrlKey||e.metaKey||e.repeat) return;
+ if(e.key.toLowerCase()==='f'){e.preventDefault();fullscreen();return;}
+ if(e.target.matches('input,select,textarea,[contenteditable="true"]')) return;
+ if(e.code==='Space'){
+  if(e.target.closest('button')) return;
+  e.preventDefault();
+  const action=spaceAction();
+  if(action) handleAction(action);
+ }
+ if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
+  if(e.target.closest('#screen button')&&state.slide>=12&&state.slide<=18) return;
+  e.preventDefault();
+  go(state.slide+(e.key==='ArrowRight'?1:-1));
+ }
+});
+function sizeStage(){
+ const viewport=byId('viewport');
+ document.documentElement.style.setProperty('--scale',Math.min(viewport.clientWidth/1280,viewport.clientHeight/720));
+}
+addEventListener('resize',sizeStage);
+addEventListener('pagehide',()=>{if(notesWindow&&!notesWindow.closed) notesWindow.close();});
+sizeStage();
+render(true);
+setInterval(updateClocks,150);
+</script>
+</body>
+</html>
